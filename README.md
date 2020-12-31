@@ -46,7 +46,7 @@ Map set(),Map get()(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Refe
 
 
 ```javascript
-//SOLUÇÃO 1
+//SOLUCAO 1
 /* while() - Recebe a quantLinhas de cada instancia. Verifica se o valor é igual a 0*/
 while ((quantLinhas = parseInt(gets())) !== 0) {
     /*Cria um array Map(), a cada nova instancia de entrada. O array é criando novamente*/
