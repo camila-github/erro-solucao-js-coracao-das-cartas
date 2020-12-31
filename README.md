@@ -38,9 +38,9 @@ https://github.com/trepichio/DIOBootcampNodejs-Desafios/blob/master/06-Resolvend
 
 Função Recursiva(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Fun%C3%A7%C3%B5es).
 
-Array Matrix (https://www.devmedia.com.br/javascript-arrays/4079).(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+Array Matrix (https://www.devmedia.com.br/javascript-arrays/4079)...(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
-Map set(),Map get()(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Map/set).(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Map)
+Map set(),Map get()(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Map/set)...(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 
 
