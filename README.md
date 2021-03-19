@@ -1,7 +1,7 @@
-## Treinamento Digital Innovation One - Exercicio - Coracao das Cartas
+## Exercicio - Coracao das Cartas
 
-O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS -  Resolvendo Algoritmos Com JavaScript.
-(https://digitalinnovation.one)
+O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS -  Resolvendo Algoritmos Com JavaScript.(https://digitalinnovation.one)
+
 
 #### Descrição do Desafio:
 
@@ -13,6 +13,7 @@ O coração das cartas, como Marcos apelidou o jogo, é individual e jogado com 
 #### Entrada:
 
 A entrada é composta por várias instâncias Cada instância é iniciada por um inteiro N (0 ≤ N ≤ 100), que identifica o número de cartas em cada pilha. A entrada termina quando N = 0. Cada uma das N linhas seguintes contém três inteiros A, B e C, que descrevem os valores numéricos das cartas em um nível da pilha (0 ≤ A, B, C ≤  9). As pilhas são descritas do topo até o fundo.
+
 
 #### Saída:
 
@@ -30,9 +31,6 @@ Exemplos de Entrada  | Exemplos de Saída
 0 |
 
 
-
-
-
 #### Link Referência:
 https://github.com/trepichio/DIOBootcampNodejs-Desafios/blob/master/06-Resolvendo%20Algoritmos%20com%20JavaScript/Desafio-01.js
 
@@ -43,10 +41,37 @@ Array Matrix 1.( https://www.devmedia.com.br/javascript-arrays/4079 )  2.( https
 Map set(),Map get() 1.( https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Map/set )  2.( https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Map )
 
 
-
-
 ```javascript
 //SOLUCAO 1
+/*Verifica se o numero ou a soma dos numero são multiplo de 3*/
+const calc = (n) => n % 3 === 0 ? true : false;
+
+const verificarInstancia = (a, b, c) => {
+    let arrAux = '';
+    arrAux = arrAux.concat(a).concat(b).concat(c);
+
+    /*get() - Retorna o elemento associado com a chave informada (x)*/
+    let x = arrAdicionarCartas.get(arrAux);
+    if (x > 0) return x === 1 ? true : false;
+
+    /*Verifica se os numeros são iguais*/
+    if (a === b && b === c && c === quantLinhas) return true;
+
+    /*Faz comparações entre os numeros de cada instancia. 
+    Nos if() é chamado a função calc() e a função recursiva verificarInstancia()*/
+    if (calc(cartas[0][a]) && verificarInstancia(a + 1, b, c)) return true;
+    if (calc(cartas[1][b]) && verificarInstancia(a, b + 1, c)) return true;
+    if (calc(cartas[2][c]) && verificarInstancia(a, b, c + 1)) return true;
+    if (calc(cartas[0][a] + cartas[1][b]) && verificarInstancia(a + 1, b + 1, c)) return true;
+    if (calc(cartas[0][a] + cartas[2][c]) && verificarInstancia(a + 1, b, c + 1)) return true;
+    if (calc(cartas[1][b] + cartas[2][c]) && verificarInstancia(a, b + 1, c + 1)) return true;
+    if (calc(cartas[0][a] + cartas[1][b] + cartas[2][c]) && verificarInstancia(a + 1, b + 1, c + 1)) return true;
+
+    arrAdicionarCartas.set(arrAux, 2);
+    return false;
+}
+
+/*Entrada dados - gets()*/
 /* while() - Recebe a quantLinhas de cada instancia. Verifica se o valor é igual a 0*/
 while ((quantLinhas = parseInt(gets())) !== 0) {
     /*Cria um array Map(), a cada nova instancia de entrada. O array é criando novamente*/
@@ -58,37 +83,4 @@ while ((quantLinhas = parseInt(gets())) !== 0) {
     /*Chama a função para verificar cada grupo de instancia*/
     console.log(verificarInstancia(0, 0, 0) ? 1 : 0);
 }
-
-function verificarInstancia(a, b, c) {
-    let arrAux = '';
-    arrAux = arrAux.concat(a).concat(b).concat(c);
-
-    /*get() - Retorna o elemento associado com a chave informada (x)*/
-    if ((x = arrAdicionarCartas.get(arrAux)) > 0) return x === 1 ? true : false;
-
-    /*Verifica se os numeros são iguais*/
-    if (a === b && b === c && c === quantLinhas) return true;
-
-    /*Faz comparações entre os numeros de cada instancia. 
-    Nos if() é chamado a função calc() e a função recursiva verificarInstancia()*/
-    if (calc(cartas[0][a]) && verificarInstancia(a + 1, b, c)) return true;
-
-    if (calc(cartas[1][b]) && verificarInstancia(a, b + 1, c)) return true;
-
-    if (calc(cartas[2][c]) && verificarInstancia(a, b, c + 1)) return true;
-
-    if (calc(cartas[0][a] + cartas[1][b]) && verificarInstancia(a + 1, b + 1, c)) return true;
-
-    if (calc(cartas[0][a] + cartas[2][c]) && verificarInstancia(a + 1, b, c + 1)) return true;
-
-    if (calc(cartas[1][b] + cartas[2][c]) && verificarInstancia(a, b + 1, c + 1)) return true;
-
-    if (calc(cartas[0][a] + cartas[1][b] + cartas[2][c]) && verificarInstancia(a + 1, b + 1, c + 1)) return true;
-
-    arrAdicionarCartas.set(arrAux, 2);
-    return false;
-}
-
-/*Verifica se o numero ou a soma dos numero são multiplo de 3*/
-function calc(n) { return n % 3 === 0 ? true : false; }
 ```
